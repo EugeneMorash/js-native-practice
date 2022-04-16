@@ -1,0 +1,21 @@
+// Converter ttf to woff & woff2: https://transfonter.org
+
+@mixin font($fontFamily, $fileName, $fontWeight, $fontStyle) {
+    @font-face {
+        font-display: swap;
+        font-family: $fontFamily;
+        src: url("./../fonts/#{$fileName}.woff2") format("woff2"), url("./../fonts/#{$fileName}.woff") format("woff");
+        font-weight: #{$fontWeight};
+        font-style: #{$fontStyle};
+    }
+}
+
+// Include font:
+// @include font("Lato", "LatoRegular", "400", "normal");
+@include font("Open Sans", "OpenSans", "400", "normal");
+
+// Examples:
+// @include font("BebasNeue", "BebasNeueRegular", "400", "normal");
+// @include font("Lato", "LatoBold", "700", "normal");
+// @include font("Lato", "LatoRegular", "400", "normal");
+// @include font("Lato", "LatoRegularItalic", "400", "italic");
